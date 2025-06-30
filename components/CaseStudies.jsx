@@ -1,67 +1,50 @@
-// components/CaseStudies.jsx
-
 import Image from "next/image";
+import Link from "next/link";
 
-const studies = [
+const caseStudies = [
   {
-    title: "E-commerce Growth Campaign",
-    category: "Digital Marketing",
-    image: "/case1.jpg", // Add your image
+    title: "E-commerce Growth for Local Fashion Brand",
+    description: "Increased sales by 300% through SEO, paid ads, and a custom Shopify redesign.",
+    image: "https://images.pexels.com/photos/4467687/pexels-photo-4467687.jpeg?auto=compress&cs=tinysrgb&w=800",
+    link: "/case-studies/fashion-growth",
   },
   {
-    title: "Brand Identity for Startups",
-    category: "Design Strategy",
-    image: "/case2.jpg",
+    title: "Viral Campaign for Food Delivery Startup",
+    description: "Generated 1M+ impressions in under 2 weeks via reels, influencers, and geo-targeting.",
+    image: "https://images.pexels.com/photos/4393667/pexels-photo-4393667.jpeg?auto=compress&cs=tinysrgb&w=800",
+    link: "/case-studies/food-delivery-viral",
   },
   {
-    title: "SEO Boost for SaaS Platform",
-    category: "SEO & Content",
-    image: "/case3.jpg",
-  },
-  {
-    title: "SEO Boost for SaaS Platform",
-    category: "SEO & Content",
-    image: "/case3.jpg",
+    title: "Brand Refresh & Conversion Boost for SaaS Company",
+    description: "Redesigned their entire brand identity and landing flow, boosting signups by 70%.",
+    image: "https://images.pexels.com/photos/3183171/pexels-photo-3183171.jpeg?auto=compress&cs=tinysrgb&w=800",
+    link: "/case-studies/saas-refresh",
   },
 ];
 
 export default function CaseStudies() {
   return (
-    <section id="casestudies" className="bg-[#FFF7F1] py-20 px-6 md:px-20">
-      <div className="max-w-7xl mx-auto text-center mb-12">
-        <h2 className="text-4xl md:text-4xl font-bold text-[#1B1B1B]">
-          Case Studies
-        </h2>
-        <p className="text-[#adadad] text-xl mt-4 max-w-xl mx-auto">
-          Real-world success stories powered by our strategy, creativity, and
-          performance.
-        </p>
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2 max-w-7xl mx-auto">
-        {studies.map((study, index) => (
-          <div
-            key={index}
-            className="flex flex-col justify-end bg-white aspect-square w-full rounded-lg shadow hover:shadow-lg transition overflow-hidden "
-          >
-            {/* <div className="absolute z-0 aspect-square h-full"> */}
-              {/* <Image
-                src={study.image}
-                alt={study.title}
-                fill
-                className="object-cover"
-              /> */}
-            {/* </div> */}
-            <div className="p-6 ">
-              <span className="text-sm text-orange-500 font-medium uppercase">
-                {study.category}
-              </span>
-              <h3 className="text-xl font-semibold mt-2 text-[#1B1B1B]">
-                {study.title}
-              </h3>
-            </div>
-          </div>
-        ))}
+    <section id="case-studies" className="py-20 px-6 md:px-20 bg-[#f9f9f9] text-gray-900">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Case Studies</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {caseStudies.map((study, idx) => (
+            <Link href={study.link} key={idx} className="group block bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+              <div className="relative h-60 w-full">
+                <Image
+                  src={study.image}
+                  alt={study.title}
+                  fill
+                  className="object-cover transition-transform group-hover:scale-105 duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2 group-hover:text-orange-500 transition">{study.title}</h3>
+                <p className="text-sm text-gray-500">{study.description}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );
