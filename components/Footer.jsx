@@ -2,50 +2,53 @@
 
 export default function Footer() {
     return (
-        <section className="bg-[#131313] text-[#cecece] md:px-20 px-6 py-12 flex flex-col justify-between gap-12">
-            <div className="icon-logo flex justify-between ">
-                <p>DIGITAL AGENCY</p>
-                <span className=" flex gap-3">
-                    <i>i</i>
-                    <i>i</i>
-                    <i>i</i>
-                    <i>i</i>
-                </span>
+        <footer className="bg-[#0f0f0f] text-[#d4d4d4] px-6 md:px-20 py-14 flex flex-col gap-16">
+            {/* Top: Logo & Socials */}
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <h2 className="text-2xl font-semibold tracking-wide">Digital Agency</h2>
+                <div className="flex gap-4 text-xl text-[#d4d4d4]">
+                    <a href="#" className="hover:text-white transition"><i className="ri-facebook-fill" /></a>
+                    <a href="#" className="hover:text-white transition"><i className="ri-instagram-line" /></a>
+                    <a href="#" className="hover:text-white transition"><i className="ri-twitter-x-line" /></a>
+                    <a href="#" className="hover:text-white transition"><i className="ri-linkedin-fill" /></a>
+                </div>
             </div>
-            <div className="services flex flex-wrap items-start justify-between gap-6">
-                {/* <div className="flex items-start justify-between gap-6"> */}
-                    <div className="blockleft flex flex-col gap-3 w-1/3">
-                        <span className=" font-bold">Digital Agency</span>
-                        <span className=" text-sm">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, beatae laboriosam. Possimus!
-                        </span>
-                        <span>+911234567890</span>
-                    </div>
 
-                    <div className="block1 flex flex-col gap-3 w-1/3">
-                        <span className=" font-bold">Category</span>
-                        <span className=" text-sm">Creative Growth</span>
-                        <span className=" text-sm">Digital Impact</span>
-                    </div>
-                    <div className="block2 flex flex-col gap-3 w-1/3">
-                        <span className=" font-bold">Company</span>
-                        <span className=" text-sm">About Us</span>
-                        <span className=" text-sm">Blog</span>
-                    </div>
-                    <div className="block3 flex flex-col gap-3 w-1/3">
-                        <span className=" font-bold">Services</span>
-                        <span className=" text-sm">Partner</span>
-                        <span className=" text-sm">Market</span>
-                        <span className=" text-sm">Capital</span>
-                    </div>
+            {/* Middle: Footer Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 border-t border-[#2a2a2a] pt-10">
+                <div className="flex flex-col gap-3">
+                    <h3 className="text-lg font-bold mb-1 text-white">Digital Agency</h3>
+                    <p className="text-sm leading-relaxed text-[#aaaaaa]">
+                        We help ambitious brands thrive in the digital world through innovative strategies and bold design.
+                    </p>
+                    <p className="text-sm text-[#cecece] mt-2">📞 +91 12345 67890</p>
+                </div>
 
-                {/* </div> */}
+                <div className="flex flex-col gap-3">
+                    <h3 className="text-lg font-bold mb-1 text-white">Category</h3>
+                    <a href="#" className="text-sm text-[#bbbbbb] hover:text-white transition">Creative Growth</a>
+                    <a href="#" className="text-sm text-[#bbbbbb] hover:text-white transition">Digital Impact</a>
+                </div>
 
+                <div className="flex flex-col gap-3">
+                    <h3 className="text-lg font-bold mb-1 text-white">Company</h3>
+                    <a href="#" className="text-sm text-[#bbbbbb] hover:text-white transition">About Us</a>
+                    <a href="#" className="text-sm text-[#bbbbbb] hover:text-white transition">Blog</a>
+                </div>
+
+                <div className="flex flex-col gap-3">
+                    <h3 className="text-lg font-bold mb-1 text-white">Services</h3>
+                    <a href="#" className="text-sm text-[#bbbbbb] hover:text-white transition">Partner</a>
+                    <a href="#" className="text-sm text-[#bbbbbb] hover:text-white transition">Market</a>
+                    <a href="#" className="text-sm text-[#bbbbbb] hover:text-white transition">Capital</a>
+                </div>
             </div>
-            <div className="copyright flex justify-between">
-                <span className="">Digital Agency @ 2025</span>
-                <span className="">excellent rate us</span>
+
+            {/* Bottom: Copyright */}
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-sm text-[#888888] border-t border-[#2a2a2a] pt-6">
+                <span>© 2025 Digital Agency. All rights reserved.</span>
+                <a href="#" className="hover:text-white transition">Rate us on TrustPilot →</a>
             </div>
-        </section>
+        </footer>
     );
 }

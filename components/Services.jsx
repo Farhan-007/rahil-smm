@@ -40,7 +40,7 @@ export default function Services() {
             className={`flex items-center justify-center gap-6 aspect-2/1 w-full py-6 rounded-xl ${index % 2 === 0 ? "flex-row-reverse" : "flex-row"
               }`}
           >
-            <Link href={service.link} className="w-1/2 p-6 lg:p-20">
+            <Link href={service.link} className="w-1/2  p-6 lg:p-20">
               {/* <div className="bg-orange-500 w-12 h-12 flex items-center justify-center rounded-md mb-4">
                 {service.icon}
               </div> */}

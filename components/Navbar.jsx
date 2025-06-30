@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <section className='bg-[#ffffffc9] backdrop-blur sticky top-0'>
+    <section className='bg-[#ffffffc9] backdrop-blur sticky top-0 z-20'>
       <div className="drawer drawer-end  py-2 px-6 md:px-12">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
@@ -48,7 +48,7 @@ export default function Navbar() {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
-          <ul className="flex flex-col text-xl bg-white min-h-full w-80 p-8 ">
+          <ul className="flex flex-col text-xl bg-white min-h-full w-80 p-8 z-20 ">
             <nav className=" flex flex-col space-y-4 py-6 text-gray-600">
               <Link href="/">Home</Link>
               <Link href="#services">Services</Link>

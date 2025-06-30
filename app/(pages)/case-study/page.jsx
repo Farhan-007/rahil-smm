@@ -4,7 +4,7 @@ export default function CaseStudyPage() {
   return (
     <div className="bg-white text-slate-900">
       {/* Hero Section */}
-      <section className="relative bg-slate-900 text-white py-16 px-4 md:px-10">
+      <section className="bg-slate-900 text-white py-16 px-4 md:px-10">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center gap-y-4">
           <h1
             initial={{ opacity: 0, y: 30 }}

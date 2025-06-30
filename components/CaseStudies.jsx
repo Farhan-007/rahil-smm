@@ -42,17 +42,17 @@ export default function CaseStudies() {
         {studies.map((study, index) => (
           <div
             key={index}
-            className="flex flex-col justify-end bg-white aspect-square w-full rounded-lg shadow hover:shadow-lg transition overflow-hidden relative"
+            className="flex flex-col justify-end bg-white aspect-square w-full rounded-lg shadow hover:shadow-lg transition overflow-hidden "
           >
-            <div className="absolute z-0 aspect-square h-full">
+            {/* <div className="absolute z-0 aspect-square h-full"> */}
               {/* <Image
                 src={study.image}
                 alt={study.title}
                 fill
                 className="object-cover"
               /> */}
-            </div>
-            <div className="p-6 z-10">
+            {/* </div> */}
+            <div className="p-6 ">
               <span className="text-sm text-orange-500 font-medium uppercase">
                 {study.category}
               </span>
