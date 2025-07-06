@@ -12,7 +12,7 @@ export default function Navbar() {
           <div className="navbar w-full">
             {/* <div className="mx-2 flex-1 px-2">Navbar Title</div> */}
             <div className="font-bold text-xl mx-2 flex-1 px-2">
-              <span className="text-black">DIGITAL</span> <span className="text-orange-500">AGENCY</span>
+              <span className="text-black">AGENCY</span> <span className="text-orange-500">PICTURES</span>
             </div>
             <div className="hidden flex-1 lg:flex ">
               <ul className="menu menu-horizontal items-center justify-center w-full">
