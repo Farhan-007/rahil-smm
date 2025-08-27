@@ -1,72 +1,106 @@
-import { RocketIcon, BrushIcon, GlobeIcon, BarChart2Icon } from "lucide-react";
+"use client";
+
+import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
+import { useState } from "react";
 
-const services = [
-  {
-    icon: <GlobeIcon className="w-6 h-6 text-white" />,
-    title: "Web Design & Development",
-    desc: "Fast, responsive, and tailored to your brand. Built with React, Tailwind, Next.js. SEO-friendly structure and CMS integration.",
-    link: "/web-development",
-    image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    icon: <RocketIcon className="w-6 h-6 text-white" />,
-    title: "Social Media Management",
-    desc: "Growth strategies, platform content planning, post scheduling, analytics, and community building.",
-    link: "/digital-strategy",
-    image: "https://images.pexels.com/photos/3182833/pexels-photo-3182833.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    icon: <BrushIcon className="w-6 h-6 text-white" />,
-    title: "Content Creation",
-    desc: "Blog posts, ads copywriting, branded visuals, carousels, and short-form videos that connect and convert.",
-    link: "/creative-design",
-    image: "https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    icon: <BarChart2Icon className="w-6 h-6 text-white" />,
-    title: "Video Production",
-    desc: "Optimizing visibility with powerful analytics and SEO tools.",
-    link: "/analytics-seo",
-    image: "https://images.pexels.com/photos/5863369/pexels-photo-5863369.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-];
+export default function ServicesSection() {
+  const [hovered, setHovered] = useState(null);
 
+  const services = [
+    {
+      id: 1,
+      title: "Social Media Management",
+      desc: "Growth strategies, platform content planning, post scheduling, analytics, and community building.",
+      link: "/digital-strategy",
+      color: "#72b01d"
+    },
+    {
+      id: 2,
+      title: "Content Creation",
+      desc: "Blog posts, ads copywriting, branded visuals, carousels, and short-form videos that connect and convert.",
+      link: "/creative-design",
+      color: "#403d39"
+    },
+    {
+      id: 3,
+      title: "Web Design & Development",
+      desc: "Fast, responsive, and tailored to your brand. Built with React, Tailwind, Next.js. SEO-friendly structure and CMS integration.",
+      link: "/web-development",
+      color: "#ff6900"
+    },
+    {
+      id: 4,
+      title: "Video Production",
+      desc: "Optimizing visibility with powerful analytics and SEO tools.",
+      link: "/analytics-seo",
+      color: "#1d3557"
+    },
+  ];
 
-export default function Services() {
   return (
-    <section id="services" className="bg-white py-20 px-6 md:px-20">
-      <div className="flex flex-col items-center max-w-7xl mx-auto gap-12">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className={`
-              flex flex-col-reverse md:flex-row 
-              ${index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"}
-              items-center justify-center gap-6 w-full rounded-xl
-            `}
-          >
-            <Link href={service.link} className="w-full md:w-1/2 p-6 lg:p-10">
-              {/* <div className="bg-black w-12 h-12 flex items-center justify-center rounded-md mb-4">
-                {service.icon}
-              </div> */}
-              <h3 className="text-2xl md:text-3xl font-semibold text-[#1B1B1B] mb-2">
-                {service.title}
-              </h3>
-              <p className="text-base md:text-xl text-gray-500">{service.desc}</p>
-            </Link>
+    <section
+      className="min-h-screen flex flex-col justify-center items-center px-6 bg-[#eff8e200] text-[#252422]"
+      // style={{ backgroundColor: "#eff8e2", color: "#252422" }} // primary1 bg + secondary2 text
+    >
+      {/* Heading */}
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-5xl font-bold mb-4 text-center"
+        style={{ color: "#252422" }} // darkest gray for headline
+      >
+        Our Services
+      </motion.h1>
 
-            <div className="w-full md:w-1/2 aspect-[4/3] md:aspect-square overflow-hidden rounded-xl relative">
-              <Image
-                src={service.image}
-                alt={service.title}
-                fill
-                className="object-cover rounded-xl"
-              />
-            </div>
-          </div>
-        ))}
+      {/* Subheading */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        className="text-lg mb-10 text-center max-w-xl"
+        style={{ color: "#403d39" }} // medium gray for text
+      >
+        We provide creative, tailored, and result-driven digital solutions designed to help your brand <span style={{ color: "#ff6900" }}>Grow</span> &
+        <span style={{ color: "#72b01d" }}> Thrive</span>.
+      </motion.p>
+
+      {/* Feature cards */}
+      <div className="flex flex-wrap w-full h-[300px] max-w-5xl gap-4">
+        {services.map((card, index) => {
+          const isHovered = hovered === index;
+
+          return (
+            <motion.div
+              key={card.id}
+              onHoverStart={() => setHovered(index)}
+              onHoverEnd={() => setHovered(null)}
+              animate={{ flex: isHovered ? 3 : 1 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="rounded-2xl shadow-lg p-6 flex flex-col justify-center items-center text-center cursor-pointer"
+              style={{
+                backgroundColor: card.color,
+                color: "#eff8e2", // always white text on cards
+              }}
+            >
+              {/* <Link href={card.link}> */}
+                <h2 className="text-2xl font-semibold mb-2">{card.title}</h2>
+                {isHovered && (
+                  <motion.p
+                    className="text-center"
+                    // style={{ color: "var(--accent)" }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.3, duration: 0.3 }}
+                  >
+                    {card.desc}
+                  </motion.p>
+                )}
+              {/* </Link> */}
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );

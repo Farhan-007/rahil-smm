@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import BlurryBackground from "./BlurryBG";
 
 export default function ContactSection() {
   const formRef = useRef(null);
@@ -87,7 +88,8 @@ export default function ContactSection() {
   }, [name, phone, email, message]);
 
   return (
-    <section id="contact" className="w-full py-20 px-6 md:px-20">
+    <section id="contact" className="w-full py-20 px-6 md:px-20 bg-[#00000000]">
+      <BlurryBackground />
       <div className="mx-auto flex md:flex-row flex-col w-full items-center justify-between mb-12">
         <h2 className="text-2xl md:text-3xl font-black text-left md:w-1/3 text-[#1B1B1B]">
           Let’s Connect And Elevate Your Brand

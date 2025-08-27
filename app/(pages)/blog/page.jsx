@@ -9,11 +9,12 @@ export default function BlogListPage() {
       <h1>Blog</h1>
       <ul>
         {posts.map((post) => (
-          <li key={post.slug}>
+          <li key={post.slug}> 
             <Link href={`/blog/${post.slug}`}>
               <p className='text-black'>
                 {post.title} –
               </p>
+              <img src={post.image} alt="" />
               {new Date(post.date).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',

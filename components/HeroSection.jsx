@@ -1,49 +1,87 @@
-import Image from 'next/image';
-import AnimatingSphere from '../app/temp/hero/animatingSphere';
-import Link from 'next/link';
+"use client";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
+import BlurryBackground from "./BlurryBG";
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-white text-gray-900 py-20 px-6 md:px-20 flex flex-col gap-12 md:gap-30">
+    <section className="relative overflow-hidden flex justify-center items-center min-h-screen py-24 px-6 md:px-20 bg-[#eff8e200] text-[#252422]" >
+      {/* <BlurryBackground /> */}
+      {/* Background subtle shapes */}
+      {/* <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.12 }}
+        transition={{ duration: 1 }}
+        className="absolute inset-0 pointer-events-none"
+      >
+        <div className="absolute top-10 left-10 w-32 h-32 bg-[#ff6900] rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-[#72b01d] rounded-full blur-3xl opacity-25"></div>
+      </motion.div> */}
 
-      <div className="absolute inset-0 z-0">
-        {/* <AnimatingSphere /> */}
-      </div>
-
-      <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-        <div className="md:w-1/2 w-full">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-            Transforming Brands with Smarter Digital Marketing
-          </h1>
-        </div>
-
-        <div className="md:w-1/2 w-full pt-4 md:pt-0 md:pl-12">
-          <p className="text-base md:text-xl text-gray-500 mb-6">
-            Digital marketing agency management commitment to excellence and results, we ensure your business thrives in today's competitive digital landscape.
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between md:gap-0 gap-12">
+        {/* Left Side - Text */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="md:w-1/2 text-center md:text-left flex flex-col gap-6"
+        >
+          <p className="w-max px-3 py-1 text-sm font-medium rounded-md bg-[#403d39] text-[#eff8e2]">
+            Your Growth. In Motion.
           </p>
-          <Link href={"#contact"}>
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full text-sm font-medium">
-              Book Strategy Call
-            </button>
-          </Link>
-        </div>
-      </div>
+          <h1 className="text-4xl sm:text-5xl md:text-4xl font-extrabold leading-tight">
+            StillMotionPictures marketing agency that turns {" "}
+            <span style={{ color: "#ff6900" }}>clicks into customers.</span>
+          </h1>
+          <p className="text-lg md:text-xl max-w-lg" style={{ color: "#403d39" }}>
+            We craft bold strategies in SEO, social, and digital advertising to build brands that don’t just compete — they lead. 🚀
+          </p>
 
-      <div className="relative z-10 mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-        <div>
-          <h3 className="text-4xl font-bold text-orange-500">50+</h3>
-          <p className="text-sm text-gray-500 mt-2">Professional Teams</p>
-        </div>
-        <div>
-          <h3 className="text-4xl font-bold text-orange-500">400+</h3>
-          <p className="text-sm text-gray-500 mt-2">Total Projects</p>
-        </div>
-        <div>
-          <h3 className="text-4xl font-bold text-orange-500">100M+</h3>
-          <p className="text-sm text-gray-500 mt-2">Investments</p>
-        </div>
-      </div>
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+            <Link href="#contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-5 py-2 rounded-full text-white font-semibold shadow-md transition"
+                style={{ backgroundColor: "#ff6900" }}
+              >
+                Book Strategy Call
+              </motion.button>
+            </Link>
+            <Link href="#about">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-5 py-2 rounded-full font-semibold border transition"
+                style={{
+                  borderColor: "#ff6900",
+                  color: "#ff6900",
+                }}
+              >
+                Learn More
+              </motion.button>
+            </Link>
+          </div>
+        </motion.div>
 
+        {/* Right Side - Illustration / Image */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="md:w-1/2 flex justify-center"
+        >
+          <div
+            className="w-80 h-80 md:w-[400px] md:h-[400px] rounded-2xl overflow-hidden shadow-xl flex items-center justify-center"
+            style={{ backgroundColor: "#403d39" }}
+          >
+            <span className="text-6xl" style={{ color: "#ff6900" }}>
+              🚀
+            </span>
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }

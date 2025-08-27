@@ -3,8 +3,13 @@
 @plugin '@tailwindcss/typography';
 
 :root {
-  --background: #ffffff;
+  /* --background: #ffffff; */
   --foreground: #171717;
+  --primary1: #eff8e2;
+  --primary2: #ff6900;
+  --secondary1: #403d39;
+  --secondary2: #252422;
+  --accent: #72b01d;
 }
 
 @font-face {

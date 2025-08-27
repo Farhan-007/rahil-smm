@@ -5,7 +5,7 @@ slug: case-study1
 date: "2025-05-15"
 client: "ShopSmart"
 industry: "E-Commerce"
-image: "/images/case-study1-hero.jpg"
+image: "/images/case-study1-chart.png"
 ---
 
 #Challenge

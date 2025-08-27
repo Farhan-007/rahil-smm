@@ -4,15 +4,15 @@ import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <section className='bg-[#ffffffc9] backdrop-blur sticky top-0 z-20'>
+    <section className='bg-[#ffffff00] backdrop-blur fixed w-full top-0 z-20'>
       <div className="drawer drawer-end  py-2 px-6 md:px-12">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
           {/* Navbar */}
           <div className="navbar w-full">
             {/* <div className="mx-2 flex-1 px-2">Navbar Title</div> */}
-            <div className="font-bold text-xl mx-2 flex-1 px-2">
-              <span className="text-black">STILLMOTION </span> <span className="text-orange-500">PICTURES </span>
+            <div className="font-bold text-3xl mx-2 flex-1 px-2 text-orange-500">
+              <span className="">SM</span><span className="text-orange-500">P</span>
             </div>
             <div className="hidden flex-1 lg:flex ">
               <ul className="menu menu-horizontal items-center justify-center w-full">
