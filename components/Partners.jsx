@@ -4,12 +4,13 @@ import { motion, useAnimationFrame } from "framer-motion";
 import { useRef } from "react";
 
 const logos = [
-  { alt: "Acme" },
-  { alt: "Nimbus" },
-  { alt: "Aventis" },
-  { alt: "Pixelcraft" },
-  { alt: "Vertex" },
-  { alt: "Zypher" },
+  { alt: "Studio By Prithviraj" },
+  { alt: "SVS Foods" },
+  { alt: "Alpha Vibes Cafe" },
+  { alt: "Wonkers" },
+  { alt: "Badshahi chai" },
+  { alt: "Proactive 'i'" },
+  { alt: "Greetoe" },
   // Add more as needed
 ];
 

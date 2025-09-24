@@ -113,21 +113,22 @@ export default function ContactSection() {
           </span>
           <span>
             <label>Phone</label>
-            <p>+91 1234567890</p>
+            <p>
+              <a href="tel:9691446645">+91 9691446645</a>
+            </p>
           </span>
           <span>
             <label>Email</label>
-            <p>rahil@gmail.com</p>
+            <p><a href="mailto:rahilkhansstudio@gmail.com">rahilkhansstudio@gmail.com</a></p>
           </span>
           <span className="max-w-1/2">
             <label>Office</label>
             <p>
-              address, city, state Lorem ipsum dolor sit amet consectetur,
-              adipisicing elit. Quia, sint!
+              nazeerabad, satna (mp), India - 485001
             </p>
           </span>
           <span className="underline">
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="https://maps.app.goo.gl/PWZvs61CdoR27jx46" target="_blank" rel="noopener noreferrer">
               See on Google Map
             </a>
           </span>

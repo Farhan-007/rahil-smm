@@ -6,7 +6,14 @@ import BlurryBackground from "./BlurryBG";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden flex justify-center items-center min-h-screen py-24 px-6 md:px-20 bg-[#eff8e200] text-[#252422]" >
+    <section
+      className="relative overflow-hidden flex justify-center items-center min-h-screen py-24 px-6 md:px-20 bg-[#eff8e200] text-[#252422]"
+      style={{
+        backgroundImage: "url('/images/hero-bg.png')", // ✅ your bg image here
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       {/* <BlurryBackground /> */}
       {/* Background subtle shapes */}
       {/* <motion.div
@@ -76,9 +83,14 @@ export default function HeroSection() {
             className="w-80 h-80 md:w-[400px] md:h-[400px] rounded-2xl overflow-hidden shadow-xl flex items-center justify-center"
             style={{ backgroundColor: "#403d39" }}
           >
-            <span className="text-6xl" style={{ color: "#ff6900" }}>
+            {/* <span className="text-6xl" style={{ color: "#ff6900" }}>
               🚀
-            </span>
+            </span> */}
+            <img
+              src="/images/hero-img.jpg"
+              alt="Hero Illustration"
+              className="w-full h-full object-cover"
+            />
           </div>
         </motion.div>
       </div>

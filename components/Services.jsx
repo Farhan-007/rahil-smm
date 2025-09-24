@@ -10,38 +10,40 @@ export default function ServicesSection() {
   const services = [
     {
       id: 1,
-      title: "Social Media Management",
+      title: "Social Media Management✨",
       desc: "Growth strategies, platform content planning, post scheduling, analytics, and community building.",
       link: "/digital-strategy",
-      color: "#72b01d"
+      color: "#72b01d",
+      gradBG: "bg-gradient-to-tr from-[#f8d948] via-[#e9336a] via-[#c127bf] to-[#6e3cf1]"
     },
+    // #f8d948 - yellow, #ef8132 - orange, #e9336a - pink, #c127bf - purple, #6e3cf1 - blue
     {
       id: 2,
-      title: "Content Creation",
+      title: "Content Creation🎥",
       desc: "Blog posts, ads copywriting, branded visuals, carousels, and short-form videos that connect and convert.",
       link: "/creative-design",
       color: "#403d39"
     },
     {
       id: 3,
-      title: "Web Design & Development",
+      title: "Web Design & Development💻",
       desc: "Fast, responsive, and tailored to your brand. Built with React, Tailwind, Next.js. SEO-friendly structure and CMS integration.",
       link: "/web-development",
       color: "#ff6900"
     },
     {
       id: 4,
-      title: "Video Production",
-      desc: "Optimizing visibility with powerful analytics and SEO tools.",
-      link: "/analytics-seo",
-      color: "#1d3557"
+      title: "Video Production🎬",
+      desc: "Crafting engaging videos from concept to final cut — storytelling that captivates.",
+      link: "/video-production",
+      color: "#e63946"
     },
   ];
 
   return (
     <section
       className="min-h-screen flex flex-col justify-center items-center px-6 bg-[#eff8e200] text-[#252422]"
-      // style={{ backgroundColor: "#eff8e2", color: "#252422" }} // primary1 bg + secondary2 text
+    // style={{ backgroundColor: "#eff8e2", color: "#252422" }} // primary1 bg + secondary2 text
     >
       {/* Heading */}
       <motion.h1
@@ -78,25 +80,25 @@ export default function ServicesSection() {
               onHoverEnd={() => setHovered(null)}
               animate={{ flex: isHovered ? 3 : 1 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="rounded-2xl shadow-lg p-6 flex flex-col justify-center items-center text-center cursor-pointer"
+              className={`rounded-2xl shadow-lg p-6 flex flex-col justify-center items-center text-center cursor-pointer ${card.gradBG || ""} `}
               style={{
                 backgroundColor: card.color,
                 color: "#eff8e2", // always white text on cards
               }}
             >
               {/* <Link href={card.link}> */}
-                <h2 className="text-2xl font-semibold mb-2">{card.title}</h2>
-                {isHovered && (
-                  <motion.p
-                    className="text-center"
-                    // style={{ color: "var(--accent)" }}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.3, duration: 0.3 }}
-                  >
-                    {card.desc}
-                  </motion.p>
-                )}
+              <h2 className="text-2xl font-semibold mb-2">{card.title}</h2>
+              {isHovered && (
+                <motion.p
+                  className="text-center"
+                  // style={{ color: "var(--accent)" }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.3, duration: 0.3 }}
+                >
+                  {card.desc}
+                </motion.p>
+              )}
               {/* </Link> */}
             </motion.div>
           );
