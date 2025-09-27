@@ -74,7 +74,7 @@ export default function CaseStudies() {
                     )} */}
                   </div>
                   <div className="absolute inset-0 top-0 bg-gradient-to-t from-black/70 to-transparent p-2 flex flex-col justify-end">
-                    <h3 className={`md:text-xl ${index !== 0 ? "text-sm" : ""} text-lg font-semibold text-white p-1`}>
+                    <h3 className={`${index === 0 ? "text-xl md:text-2xl" : "text-sm md:text-xl"} font-semibold text-white p-1`}>
                       {study.title}
                     </h3>
                     <p className="text-sm text-gray-200">{study.description}</p>
