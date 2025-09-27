@@ -21,8 +21,8 @@ export default function Home() {
       <HeroSection />
       <PartnerLogos />
       {/* <AboutInnovation /> */}
-      <Services />
       <CaseStudies />
+      <Services />
       {/* <Team /> */}
       <Testimonials />
       <ContactSection />

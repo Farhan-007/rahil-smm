@@ -4,57 +4,57 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
+const services = [
+  {
+    id: 1,
+    title: "Social Media Management✨",
+    desc: "Growth strategies, platform content planning, post scheduling, analytics, and community building.",
+    link: "/digital-strategy",
+    color: "#72b01d",
+    gradBG: "bg-gradient-to-tr from-[#f8d948] via-[#e9336a] via-[#c127bf] to-[#6e3cf1]"
+  },
+  // #f8d948 - yellow, #ef8132 - orange, #e9336a - pink, #c127bf - purple, #6e3cf1 - blue
+  {
+    id: 2,
+    title: "Content Creation🎥",
+    desc: "Blog posts, ads copywriting, branded visuals, carousels, and short-form videos that connect and convert.",
+    link: "/creative-design",
+    color: "#403d39"
+  },
+  {
+    id: 3,
+    title: "Web Design & Development💻",
+    desc: "Fast, responsive, and tailored to your brand. Built with React, Tailwind, Next.js. SEO-friendly structure and CMS integration.",
+    link: "/web-development",
+    color: "#ff6900"
+  },
+  {
+    id: 4,
+    title: "Video Production🎬",
+    desc: "Crafting engaging videos from concept to final cut — storytelling that captivates.",
+    link: "/video-production",
+    color: "#e63946"
+  },
+];
+
 export default function ServicesSection() {
   const [hovered, setHovered] = useState(null);
 
-  const services = [
-    {
-      id: 1,
-      title: "Social Media Management✨",
-      desc: "Growth strategies, platform content planning, post scheduling, analytics, and community building.",
-      link: "/digital-strategy",
-      color: "#72b01d",
-      gradBG: "bg-gradient-to-tr from-[#f8d948] via-[#e9336a] via-[#c127bf] to-[#6e3cf1]"
-    },
-    // #f8d948 - yellow, #ef8132 - orange, #e9336a - pink, #c127bf - purple, #6e3cf1 - blue
-    {
-      id: 2,
-      title: "Content Creation🎥",
-      desc: "Blog posts, ads copywriting, branded visuals, carousels, and short-form videos that connect and convert.",
-      link: "/creative-design",
-      color: "#403d39"
-    },
-    {
-      id: 3,
-      title: "Web Design & Development💻",
-      desc: "Fast, responsive, and tailored to your brand. Built with React, Tailwind, Next.js. SEO-friendly structure and CMS integration.",
-      link: "/web-development",
-      color: "#ff6900"
-    },
-    {
-      id: 4,
-      title: "Video Production🎬",
-      desc: "Crafting engaging videos from concept to final cut — storytelling that captivates.",
-      link: "/video-production",
-      color: "#e63946"
-    },
-  ];
-
   return (
     <section
-      className="min-h-screen flex flex-col justify-center items-center px-6 bg-[#eff8e200] text-[#252422]"
+      className="md:min-h-screen flex flex-col justify-center items-center px-6 md:py-20 py-16 bg-[#eff8e200] text-[#252422]"
     // style={{ backgroundColor: "#eff8e2", color: "#252422" }} // primary1 bg + secondary2 text
     >
       {/* Heading */}
-      <motion.h1
+      <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-5xl font-bold mb-4 text-center"
+        className="text-3xl font-bold mb-4 text-center"
         style={{ color: "#252422" }} // darkest gray for headline
       >
         Our Services
-      </motion.h1>
+      </motion.h2>
 
       {/* Subheading */}
       <motion.p
@@ -69,7 +69,7 @@ export default function ServicesSection() {
       </motion.p>
 
       {/* Feature cards */}
-      <div className="flex flex-wrap w-full h-[300px] max-w-5xl gap-4">
+      <div className="flex flex-wrap w-full min-h-[300px] md:max-h-[300px] max-w-5xl gap-4">
         {services.map((card, index) => {
           const isHovered = hovered === index;
 
